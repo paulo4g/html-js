@@ -1,17 +1,27 @@
-var vitorias = parseInt(prompt("Entre com o número de vitórias."))
-var empates = parseInt(prompt("Entre com o número de empates."))
-var pontos = (vitorias * 3) + empates
+const read = require('readline-sync')
 
-console.log("Os pontos do seu time é " + pontos)
+console.clear()
 
-if(pontos > 28) {
-  console.log("Seu time está melhor do que o ano passado.")
+
+function calculaImc(altura, peso) {
+  return peso / (altura * altura)
+}
+var nome = read.question("Qual é o seu nome? ")
+var altura = read.questionInt("Qual é a sua altura? ")
+var peso = read.questionInt("Qual é o seu peso? ")
+
+var imc = calculaImc(altura, peso)
+
+if (imc < 18.5) {
+  console.log("Você está abaixo do recomendado")
+}
+if (imc > 35) {
+  console.log("Você está acima do recomendado")
+}
+if(imc>= 18) {
+  if(imc < 35) {
+    console.log("Você está com o IMC ideal, parabéns")
+  }
 }
 
-if(pontos < 28) {
-  console.log("Seu time está pior do que o ano passado.")
-}
-
-if (pontos == 28) {
-  console.log("Seu time está igual do que o ano passado.")
-}
+console.log(nome + ", o seu IMC é: " + imc)
