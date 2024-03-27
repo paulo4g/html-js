@@ -1,3 +1,5 @@
+// Estudo sobre condicionais e utilizando a biblioteca "readline para captação de dados do usuário pelo terminal"
+
 const read = require('readline-sync')
 
 console.clear()
@@ -18,10 +20,8 @@ if (imc < 18.5) {
 if (imc > 35) {
   console.log("Você está acima do recomendado")
 }
-if(imc>= 18) {
-  if(imc < 35) {
+if(imc>= 18 && imc <= 35) {
     console.log("Você está com o IMC ideal, parabéns")
-  }
 }
 
 console.log(nome + ", o seu IMC é: " + imc)
